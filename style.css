@@ -1,0 +1,25 @@
+/* 
+.lobster-regular {
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.open-sans-<uniquifier> {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+*/
+
+:root {
+	--maroon: #73464e;
+	--teal: #466e73;
+	--lt-gray: #f2efe9;
+	--gray: #bfb7b4;
+	--black: #0d0d0d;
+	--white: #fff;
+}
