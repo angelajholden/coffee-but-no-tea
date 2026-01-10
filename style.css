@@ -23,3 +23,90 @@
 	--black: #0d0d0d;
 	--white: #fff;
 }
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	font-family: "Open Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-variation-settings: "wdth" 100;
+	font-size: 100%;
+	line-height: 1.65;
+	color: var(--black);
+	background-color: var(--white);
+}
+
+figure {
+	margin: 0;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+svg {
+	display: inline-block;
+	width: 3rem;
+	height: 3rem;
+	fill: blue;
+	stroke: red;
+}
+
+button {
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+	font-family: "Lobster", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 1.25;
+}
+
+a {
+	color: var(--maroon);
+	text-decoration-color: var(--maroon);
+	text-decoration-thickness: 2px;
+	text-underline-offset: 3px;
+	transition: text-decoration-color 300ms ease-in-out;
+}
+
+a:focus,
+a:hover,
+a:active {
+	text-decoration-color: transparent;
+}
+
+.access-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.wrap {
+	max-width: 100rem;
+	margin: 0 auto;
+}
