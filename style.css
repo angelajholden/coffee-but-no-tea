@@ -19,7 +19,7 @@
 	--maroon: #73464e;
 	--dk-maroon: #36181c;
 	--teal: #466e73;
-	--lt-gray: rgb(242, 239, 233);
+	--lt-gray: #f2efe9;
 	--gray: #bfb7b4;
 	--black: #0d0d0d;
 	--white: #fff;
@@ -86,8 +86,8 @@ h2,
 }
 
 a {
-	color: var(--maroon);
-	text-decoration-color: var(--maroon);
+	color: var(--dk-maroon);
+	text-decoration-color: var(--dk-maroon);
 	text-decoration-thickness: 2px;
 	text-underline-offset: 3px;
 	transition: text-decoration-color 300ms ease-in-out;
@@ -137,7 +137,7 @@ a:active {
 
 .primary_logo {
 	margin: 0;
-	font-size: 4rem;
+	font-size: clamp(2rem, 6vw, 4rem);
 	color: var(--lt-gray);
 	line-height: 1;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 25%);
@@ -146,6 +146,35 @@ a:active {
 /* Navigation */
 .menu_button {
 	display: none;
+	width: 3rem;
+	height: 3rem;
+	padding: 0.25rem;
+	border-radius: 5px;
+	background-color: transparent;
+	transition: background-color 300ms ease-in-out;
+}
+
+.close_button {
+	margin: 0.5rem 0 0.5rem auto;
+}
+
+.menu_button:focus,
+.menu_button:hover,
+.menu_button:active {
+	background-color: var(--lt-gray);
+}
+
+.menu_button svg {
+	width: 2.5rem;
+	height: 2.5rem;
+	stroke: var(--lt-gray);
+	transition: stroke 300ms ease-in-out;
+}
+
+.menu_button:focus svg,
+.menu_button:hover svg,
+.menu_button:active svg {
+	stroke: var(--dk-maroon);
 }
 
 .main_nav {
@@ -161,7 +190,8 @@ a:active {
 
 .main_nav a {
 	display: block;
-	padding: 0.75rem 1.5rem;
+	padding: 0.65rem 1.5rem;
+	border: 2px solid rgba(242, 239, 233, 65%);
 	border-radius: 50vh;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -176,7 +206,74 @@ a:active {
 .main_nav a:hover,
 .main_nav a:active {
 	color: var(--lt-gray);
-	background-color: var(--teal);
+	background-color: var(--dk-maroon);
+}
+
+@media (max-width: 1024px) {
+	.menu_button {
+		display: block;
+	}
+
+	.navigation {
+		visibility: hidden;
+		padding: 0 1rem 1rem;
+		position: fixed;
+		top: 0;
+		left: -300px;
+		width: 300px;
+		max-width: 100%;
+		height: 100dvh;
+		transform: translateX(0);
+		background-color: var(--dk-maroon);
+		transition: transform 300ms linear, visibility 300ms ease-in-out;
+	}
+
+	.main_nav {
+		flex-direction: column;
+		gap: 0;
+	}
+
+	.main_nav li {
+		width: 100%;
+		border-bottom: 2px dotted var(--maroon);
+	}
+
+	.main_nav li:last-of-type {
+		border-bottom: none;
+	}
+
+	.main_nav a {
+		padding: 0.5rem 0;
+		margin: 0.5rem 0;
+		border: none;
+		border-radius: 0;
+		text-decoration: underline;
+		text-decoration-color: transparent;
+		text-decoration-thickness: 2px;
+		text-underline-offset: 5px;
+		text-transform: uppercase;
+		font-weight: 600;
+		font-size: 1.1rem;
+		letter-spacing: 1px;
+		background-color: transparent;
+		color: var(--lt-gray);
+		transition: text-decoration-color 300ms ease-in-out;
+	}
+
+	.main_nav a:focus,
+	.main_nav a:hover,
+	.main_nav a:active {
+		text-decoration-color: var(--lt-gray);
+	}
+
+	.menu_active .navigation {
+		visibility: visible;
+		transform: translateX(300px);
+	}
+
+	.menu_active .open_button {
+		visibility: hidden;
+	}
 }
 
 /* Hero */
@@ -242,11 +339,6 @@ a:active {
 	line-height: 1.25;
 }
 
-/* .event_list span {
-	display: inline-block;
-	vertical-align: middle;
-} */
-
 .event_list span:first-of-type {
 	width: 60px;
 	height: auto;
@@ -264,11 +356,11 @@ a:active {
 
 @media (max-width: 1400px) {
 	.hero {
-		padding: 10rem 1rem 1rem;
+		padding: 10rem 2rem 2rem;
 	}
 
 	.hero .wrap {
-		gap: 1rem;
+		gap: 2rem;
 	}
 }
 
@@ -278,15 +370,30 @@ a:active {
 	}
 }
 
+@media (max-width: 1024px) {
+	.hero {
+		padding: 8rem 2rem 2rem;
+	}
+}
+
 @media (max-width: 600px) {
+	.hero {
+		padding: 6rem 1rem 1rem;
+	}
+
 	.hero .wrap {
 		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+
+	.hero .article {
+		padding: 1rem;
 	}
 }
 
 /* Footer */
 .footer {
-	padding: 3rem 1rem;
+	padding: 3rem 2rem 2rem;
 	background-color: var(--teal);
 	color: var(--lt-gray);
 	font-size: clamp(1rem, 2vw, 1.5rem);
@@ -295,7 +402,7 @@ a:active {
 .footer .wrap {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	gap: 7rem;
+	gap: 4rem;
 }
 
 .footer .tertiary_heading {
@@ -303,6 +410,18 @@ a:active {
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	margin: 0 0 1rem;
+}
+
+.footer .figure {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1;
+}
+
+.footer .figure img {
+	width: 100%;
+	height: 100%;
+	object-position: cover;
 }
 
 .footer_list {
@@ -387,8 +506,13 @@ a:active {
 }
 
 @media (max-width: 600px) {
+	.footer {
+		padding: 1rem;
+	}
+
 	.footer .wrap {
 		grid-template-columns: 1fr;
+		gap: 1rem;
 	}
 
 	.footer .primary_logo + p {
