@@ -202,6 +202,7 @@ a:active {
 	transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
 }
 
+.main_nav a.active,
 .main_nav a:focus,
 .main_nav a:hover,
 .main_nav a:active {
