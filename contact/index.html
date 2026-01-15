@@ -39,53 +39,46 @@
 				<img src="../images/coffee-but-no-tea.jpg" alt="Coffee and cookies displayed on a table.">
 			</figure>
 			<div class="wrap">
-				<article class="article">
-					<h2 class="secondary_heading">Coffees</h2>
-					<ul class="cafe_list center">
-						<li>Caffè Americano</li>
-						<li>Café au lait</li>
-						<li>Café Bombón</li>
-						<li>Café Cubano</li>
-						<li>Caffè crema</li>
-						<li>Café de olla</li>
-						<li>Caffè latte</li>
-					</ul>
-				</article>
-				<article class="article">
-					<h2 class="secondary_heading">Snacks</h2>
-					<ul class="cafe_list center">
-						<li>Cake</li>
-						<li>Pie</li>
-						<li>Brownies</li>
-						<li>Cookies</li>
-						<li>Donuts</li>
-						<li>Cupcakes</li>
-						<li>Muffins</li>
-					</ul>
-				</article>
-				<article class="article">
-					<h2 class="secondary_heading">Events</h2>
-					<ul class="event_list">
-						<li>
-							<span>Jun 11</span>
-							<span>Open Mic Night</span>
-						</li>
-						<li>
-							<span>Jun 15</span>
-							<span>Piano Bar</span>
-						</li>
-						<li>
-							<span>Jun 19</span>
-							<span>Book Club</span>
-						</li>
-					</ul>
-				</article>
-				<article class="article">
-					<h2 class="secondary_heading">Specials</h2>
-					<p class="center">The special today is a piece of birthday cake with every cup of coffee. Because cake makes everything better.</p>
-				</article>
+				<h1 class="page_title">Contact Us</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi expedita libero quasi mollitia rem placeat, illo inventore.</p>
 			</div>
 		</div>
+		<section class="section">
+			<div class="wrap">
+				<h2 class="secondary_heading">Fill out the Form</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui debitis necessitatibus accusantium ut eligendi. Ea veniam laboriosam consequatur nobis, hic ipsum iure commodi dicta, unde recusandae asperiores explicabo repellendus voluptatem!</p>
+				<form method="post" class="form" action="https://formspree.io/f/mnjjnljy" target="_blank">
+					<input type="hidden" name="page_path" value="" />
+					<input type="hidden" name="page_url" value="" />
+
+					<div aria-hidden="true" class="sr-only">
+						<label>
+							Leave this field empty.
+							<input type="text" name="_honeypot" autocomplete="off" />
+						</label>
+					</div>
+
+					<label class="sr-only" for="name">Name</label>
+					<input id="name" type="text" name="name" placeholder="Name*" minlength="2" maxlength="50" autocomplete="given-name" required>
+
+					<label for="email" class="sr-only">Email</label>
+					<input id="email" type="email" name="email" placeholder="Email*" autocomplete="email" required>
+
+					<label for="phone" class="sr-only">Phone (Optional)</label>
+					<input id="phone" type="tel" name="phone" placeholder="Phone (Optional)" autocomplete="tel">
+
+					<label for="message" class="sr-only">Message</label>
+					<textarea name="message" id="message" required placeholder="Message*" minlength="10" autocomplete="off" rows="10"></textarea>
+
+					<small>
+						Fields in
+						<span class="bold">bold</span>
+						are required. A new tab will open when submitted.
+					</small>
+					<button class="button" type="submit">Submit</button>
+				</form>
+			</div>
+		</section>
 	</main>
 	<footer class="footer">
 		<div class="wrap">
