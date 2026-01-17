@@ -255,7 +255,9 @@ small {
 	font-size: 1.1rem;
 	letter-spacing: 1px;
 	background-color: rgba(242, 239, 233, 65%);
-	transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+	transition:
+		background-color 300ms ease-in-out,
+		color 300ms ease-in-out;
 }
 
 .main_nav a.active,
@@ -282,7 +284,9 @@ small {
 		height: 100dvh;
 		transform: translateX(0);
 		background-color: var(--dk-maroon);
-		transition: transform 300ms linear, visibility 300ms ease-in-out;
+		transition:
+			transform 300ms linear,
+			visibility 300ms ease-in-out;
 	}
 
 	.main_nav {
@@ -392,6 +396,7 @@ small {
 	padding: 2rem;
 	color: var(--dk-maroon);
 	font-size: clamp(1rem, 2vw, 1.5rem);
+	border: 10px solid rgba(242, 239, 233, 75%);
 	background-color: rgba(242, 239, 233, 85%);
 }
 
@@ -404,6 +409,12 @@ small {
 	padding: 0;
 	margin: 0;
 	list-style-type: none;
+}
+
+.cafe_list li:not(:last-of-type) {
+	padding: 0.25rem 0;
+	margin: 0.25rem;
+	border-bottom: 3px dotted var(--lt-gray);
 }
 
 .event_list li {
@@ -474,6 +485,10 @@ small {
 /* Contact */
 .section:has(.form) {
 	background-color: var(--lt-gray);
+}
+
+.wrap:has(.form) {
+	max-width: 55rem;
 }
 
 input[type="text"],
