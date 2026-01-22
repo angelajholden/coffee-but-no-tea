@@ -85,6 +85,10 @@ h2,
 	line-height: 1.25;
 }
 
+p {
+	font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
 a {
 	color: var(--dk-maroon);
 	text-decoration-color: var(--dk-maroon);
@@ -167,6 +171,12 @@ small {
 
 .secondary_heading + p {
 	margin: 1rem 0 2rem;
+}
+
+@media (max-width: 768px) {
+	.secondary_heading + p {
+		margin: 1rem 0;
+	}
 }
 
 @media (max-width: 600px) {
@@ -599,6 +609,37 @@ textarea[required]::placeholder {
 
 	.content_wrap .figure {
 		width: 100px;
+	}
+}
+
+/* About */
+.content {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	align-items: start;
+	gap: 2rem;
+}
+
+.content .figure {
+	/* use a fixed width (px) and max-width: 100% if you ARE NOT using css grid */
+	width: 100%;
+	height: auto;
+	aspect-ratio: 9 / 16;
+}
+
+.content iframe {
+	width: 100%;
+	height: 100%;
+}
+
+.text p {
+	margin: 0 0 1rem;
+}
+
+@media (max-width: 868px) {
+	.content {
+		grid-template-columns: 1fr;
+		gap: 1rem;
 	}
 }
 
